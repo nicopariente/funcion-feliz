@@ -1,0 +1,21 @@
+def es_feliz(num):
+    r = num
+    suma_cuadrados = []
+    control = False
+    while True:
+        r = sum(int(x) ** 2 for x in str(r))
+        if r == 1:
+            control = True
+            break
+        if r in suma_cuadrados:
+            control = False
+            break
+        suma_cuadrados.append(r)
+    return control
+
+#Programa principal 
+numero = 7
+if es_feliz(numero) == True:
+    print(f"{numero} es feliz!")
+else:
+    print(f"{numero} no es feliz!")
